@@ -5,7 +5,7 @@ import threading
 host = str(sys.argv[1])
 port = int(sys.argv[2])
 method = str(sys.argv[3])
-loops = 1
+loops = 5
 
 def send_packet(amplifier):
     try:
